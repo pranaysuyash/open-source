@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1719" />
+  <title>ScoreRevive — restore sheet music with GPT-6 Astra</title>
+  <meta name="description" content="Turn a photographed or scanned music score into clean, editable, playable notation with GPT-6 Astra." />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.7.0/abcjs-audio.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/abcjs@6.7.0/dist/abcjs-basic-min.js"></script>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand"><span class="mark" aria-hidden="true"></span>ScoreRevive</div>
+      <div class="header-note">Notation restoration with GPT-6 Astra</div>
+    </header>
+
+    <section class="intro">
+      <h1>Give old music<br>its score back.</h1>
+      <div class="intro-copy">
+        <p>Drop a photograph or scan. Astra reconstructs the visible notation into a clean symbolic score, flags what it is unsure about, then lets you hear and refine the result.</p>
+        <div class="benchmark">
+          <div><strong>0.84</strong><br>OpenScore String Quartets</div>
+          <div class="rule"></div>
+          <div>Astra result reported by OpenAI<br>using 1 − OMR normalized edit distance.</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="workspace" id="workspace">
+      <div class="toolbar">
+        <div class="pipeline">
+          <span class="pipe-dot active"></span><span>Read</span>
+          <span class="pipe-dot"></span><span>Structure</span>
+          <span class="pipe-dot"></span><span>Verify</span>
+          <span class="pipe-dot"></span><span>Restore</span>
+        </div>
+        <div class="model-chip">gpt-6-astra</div>
+      </div>
+
+      <div id="emptyState">
+        <div class="drop-column">
+          <label class="drop-zone" id="dropZone">
+            <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp" />
+            <span class="upload-icon" aria-hidden="true"></span>
+            <h2>Drop a score page</h2>
+            <p>Photograph, scan, screenshot. We resize it locally before sending it to Astra.</p>
+            <p class="small">PNG · JPEG · WEBP · one page at a time</p>
+          </label>
+        </div>
+        <div class="examples">
+          <div>
+            <h3>What the restoration keeps</h3>
+            <div class="example-list">
+              <div class="example-row"><b>01</b><span>Notes, rests, bar structure, key and time signatures.</span></div>
+              <div class="example-row"><b>02</b><span>Multiple visible parts or voices when the page is legible enough.</span></div>
+              <div class="example-row"><b>03</b><span>Uncertainty stays visible instead of being quietly guessed away.</span></div>
+            </div>
+          </div>
+          <button class="preview-btn" id="previewBtn" type="button">Preview the finished interface</button>
+        </div>
+      </div>
+
+      <div id="resultState">
+        <section class="scan-pane">
+          <div class="pane-head"><span>Original</span><button class="btn" id="newScoreBtn">New page</button></div>
+          <div class="scan-frame"><img id="scanImage" alt="Uploaded sheet music" /></div>
+        </section>
+        <section class="score-pane">
+          <div class="pane-head">
+            <span>Reconstructed notation</span>
+            <div class="score-actions">
+              <button class="btn" id="copyBtn">Copy ABC</button>
+              <button class="btn" id="downloadBtn">Export .abc</button>
+            </div>
+          </div>
+          <div id="paper"></div>
+          <div id="audio"></div>
+        </section>
+        <aside class="inspect-pane">
+          <div class="pane-head"><span>Astra inspection</span><span id="passLabel">Pass 1</span></div>
+          <h2 class="meta-title" id="scoreTitle">Untitled score</h2>
+          <div class="meta-sub" id="scoreComposer">Composer not visible</div>
+          <div class="confidence">
+            <div class="ring" id="confidenceRing" style="--p:0"><strong id="confidenceValue">0%</strong></div>
+            <div><h4>Transcription confidence</h4><p id="confidenceCopy">Waiting for a reconstruction.</p></div>
+          </div>
+          <div class="facts">
+            <div class="fact"><label>Key</label><span id="factKey">—</span></div>
+            <div class="fact"><label>Meter</label><span id="factMeter">—</span></div>
+            <div class="fact"><label>Tempo</label><span id="factTempo">—</span></div>
+            <div class="fact"><label>Parts</label><span id="factParts">—</span></div>
+          </div>
+          <div class="section-label">Uncertain readings</div>
+          <div class="uncertainties" id="uncertainties"></div>
+          <div class="steer">
+            <div class="section-label">Refine with Astra</div>
+            <textarea id="steerText" placeholder="Example: Ignore the faint pencil marks. Recheck accidentals in measures 5–8."></textarea>
+            <button class="btn mint" id="verifyBtn">Verify & refine this score</button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="loading" id="loading">
+        <div class="loading-inner">
+          <div class="loading-orbit"></div>
+          <h2 id="loadingTitle">Astra is reading the score</h2>
+          <p id="loadingCopy">Reconstructing visible notation and keeping ambiguous measures explicit.</p>
+          <div class="status-line"><span></span></div>
+        </div>
+      </div>
+    </main>
+    <div class="errorbar" id="errorbar"></div>
+    <footer>
+      <span>ScoreRevive is an experimental transcription surface. Verify important notation against the source.</span>
+      <span>Built for the GPT-6 Astra 24-hour ship challenge.</span>
+    </footer>
+  </div>
+
+<script defer src="assets/app.js"></script>
+</body>
+</html>
