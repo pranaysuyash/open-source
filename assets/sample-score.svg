@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1180" viewBox="0 0 900 1180">
+  <rect width="900" height="1180" fill="#efe9dc"/>
+  <rect x="34" y="28" width="832" height="1124" rx="4" fill="#faf7ed" stroke="#d6cec0"/>
+  <text x="450" y="105" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#393a37">Minuet study</text>
+  <text x="450" y="140" text-anchor="middle" font-family="Georgia,serif" font-size="17" fill="#6d6a62">sample score photograph</text>
+  <g stroke="#57564f" stroke-width="2">
+    <path d="M90 225H810 M90 242H810 M90 259H810 M90 276H810 M90 293H810"/>
+    <path d="M90 415H810 M90 432H810 M90 449H810 M90 466H810 M90 483H810"/>
+    <path d="M90 605H810 M90 622H810 M90 639H810 M90 656H810 M90 673H810"/>
+    <path d="M90 795H810 M90 812H810 M90 829H810 M90 846H810 M90 863H810"/>
+  </g>
+  <g fill="#3e3f3b" stroke="#3e3f3b" stroke-width="3">
+    <g transform="translate(145,258) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(215,242) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(285,225) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(370,242) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(440,259) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(520,276) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(620,242) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(705,259) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(155,449) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(230,432) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(310,415) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(400,449) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(490,466) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(590,432) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+    <g transform="translate(690,449) rotate(-12)"><ellipse rx="11" ry="8"/><path d="M10 0V-55"/></g>
+  </g>
+  <g stroke="#68665e" stroke-width="2"><path d="M330 213v88 M565 213v88 M755 213v88 M345 403v88 M610 403v88 M760 403v88"/></g>
+  <g font-family="Georgia,serif" fill="#55534c"><text x="98" y="210" font-size="18">Moderato</text><text x="98" y="394" font-size="15">dolce</text><text x="100" y="585" font-size="15">p</text></g>
+  <g opacity=".16" stroke="#775d48" stroke-width="5" fill="none"><path d="M510 595c30-30 80-25 105 5"/><path d="M500 715c75-40 165-35 235 5"/></g>
+  <g opacity=".35" fill="#786954"><circle cx="810" cy="1020" r="13"/><circle cx="140" cy="1030" r="8"/></g>
+</svg>
