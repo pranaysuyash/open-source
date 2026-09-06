@@ -4,6 +4,10 @@ ScoreRevive is a GPT-6 Astra challenge build for restoring photographed or scann
 
 Drop one score page. Astra reconstructs the visible notation into ABC, reports uncertain readings instead of silently guessing them away, and supports a second verification pass against the original image. The browser renders the ABC as engraved notation through abcjs, can play it, and exports the reconstructed `.abc` source.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpranaysuyash%2Fopen-source&project-name=score-revive&repository-name=score-revive&env=OPENAI_API_KEY&envDescription=OpenAI+API+key+with+access+to+GPT-6+Astra.+The+key+is+used+only+by+the+server-side+Vercel+function.)
+
+The deploy flow creates a `score-revive` project/repository and asks for `OPENAI_API_KEY` without putting the secret in the URL.
+
 ## Why Astra
 
 OpenAI reports GPT-6 Astra at **0.84** on OpenScore String Quartets using `1 - OMR normalized edit distance`, versus **0.19** for GPT-5.6 Sol. ScoreRevive turns that benchmark-shaped capability into a product interaction rather than another chat surface.
